@@ -1422,7 +1422,7 @@ body:not(.tt-m-menu-open) #tt-header.tt-header-scroll.tt-fly-up {
 		display: block !important;
 		top: 100%;
 		left: 0;
-		width: 220px;
+		width: 250px;
 		text-align: left;
 		visibility: hidden;
 		opacity: 0;
@@ -2188,7 +2188,10 @@ body.is-mobile .ph-mask {
 
 /* Page header center 
 ====================== */
-#page-header.ph-center {
+#page-header.ph-center .ph-video-inner img{
+	width: 100%;
+	height: 100%;
+    object-fit: contain;
 }
 #page-header.ph-center .page-header-inner {
 	display: flex;
@@ -6646,7 +6649,27 @@ body:not(.is-mobile) #portfolio-grid.pgi-cap-inside.pgi-cap-hover .portfolio-gri
 .tt-ppl-items-list {
 	width: 100%;
 }
-
+.mission-card{
+	border: 1px solid var(--tt-border-color);
+    padding: 25px;
+    height: 370px;
+    border-radius: 10px;
+}
+.mission-img{
+    display: flex;
+    justify-content: center;
+}
+.mission-img img{
+    width: 150px;
+}
+.mission .mission-img h4{
+    align-content: center;
+    margin-bottom: 0;
+    margin-inline-start: 15px;
+}
+.mission .content p{
+    text-align: center;
+}
 /* Portfolio preview list item
 =============================== */
 .tt-ppl-item {
@@ -9214,7 +9237,7 @@ body.is-mobile .tt-avlist-item:focus {
 #tt-footer {
 	position: relative;
 	width: 100%;
-	padding: 120px 0;
+	padding: 120px 0 0;
 	font-size: 19px;
 	z-index: 2;
 }
@@ -9283,6 +9306,10 @@ body.is-mobile .tt-avlist-item:focus {
 }
 
 /* Footer logo */
+.tt-footer-logo{
+	height: 280px;
+	align-content: center;
+}
 .tt-footer-logo a { 
 	display: block;
 }
@@ -9306,7 +9333,10 @@ body.is-mobile .tt-avlist-item:focus {
 	margin-top: 50px;
 	font-size: 14px;
 	font-weight: 300;
-	opacity: .6;
+	opacity: .8;
+}
+.tt-footer-copyright a{
+	color: var(--tt-main-color) !important;
 }
 .tt-footer-widget-list .tt-footer-copyright a {
 	font-size: 14px;

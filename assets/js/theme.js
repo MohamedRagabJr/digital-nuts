@@ -1420,10 +1420,10 @@
 
 			if ($ttContentCarousel.attr("data-size-small") == "true") {
 				var $data_ttCcCentered = false;
-				var $data_ttCcSize = 3;
+				var $data_ttCcSize = 5;
 			} else {
 				var $data_ttCcCentered = true;
-				var $data_ttCcSize = 2;
+				var $data_ttCcSize = 5;
 			}
 
 			// Init Swiper
@@ -1431,7 +1431,7 @@
 			var $ttContentCarouselSwiper = new Swiper($ttContentCarousel.find(".swiper")[0], {
 				// Parameters
 				direction: "horizontal",
-				slidesPerView: 1,
+				slidesPerView: 2,
 				longSwipesRatio: 0.3,
 				simulateTouch: $data_ttCcSimulateTouch,
 				grabCursor: $data_ttCcSimulateTouch,
