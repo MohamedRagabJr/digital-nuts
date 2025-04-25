@@ -14,11 +14,11 @@
 /* ------------------------------------------------------------- */
 
 .tt-sidebar {
-	margin-left: 40px;
+	margin-inline-start: 40px;
 }
 @media (max-width: 1600px) {
 	.tt-sidebar {
-		margin-left: 10px;
+		margin-inline-start: 10px;
 	}
 }
 @media (max-width: 991px) {
@@ -29,12 +29,12 @@
 
 /* Sidebar left */
 .tt-row.tt-lg-row-reverse .tt-sidebar {
-	margin-left: 0;
-	margin-right: 40px;
+	margin-inline-start: 0;
+	margin-inline-end: 40px;
 }
 @media (max-width: 1600px) {
 	.tt-row.tt-lg-row-reverse .tt-sidebar {
-		margin-right: 10px;
+		margin-inline-end: 10px;
 	}
 }
 
@@ -51,7 +51,7 @@
 .sidebar-heading {
 	position: relative;
 	margin-bottom: 30px;
-	padding-left: 15px;
+	padding-inline-start: 15px;
 	text-transform: uppercase;
 	font-family: var(--tt-alter-font);
 	font-size: 34px;
@@ -63,7 +63,7 @@
 	position: absolute;
 	display: block;
 	content: "";
-	left: 0;
+	inset-inline-start: 0;
 	top: 50%;
 	width: 6px;
 	height: 6px;
@@ -75,14 +75,10 @@
 
 /* Sidebar search 
 ================== */
-.sidebar-search {
-}
 
 
 /* Sidebar categories 
 ====================== */
-.sidebar-categories {
-}
 .sidebar-categories > ul > li {
 	padding: 0;
 }
@@ -115,6 +111,10 @@
 	border-radius: 100px;
 	transition: all .2s ease-in-out;
 }
+[dir="rtl"] .sidebar-categories > ul > li > a span {
+	float: left;
+	
+}
 .sidebar-categories > ul > li > a:hover span {
 	background-color: var(--tt-main-color);
 	color: #FFF;
@@ -123,8 +123,7 @@
 
 /* Sidebar post list 
 ===================== */
-.sidebar-post-list {
-}
+
 .sidebar-post-list > ul > li {
 	list-style: none;
 	overflow: hidden;
@@ -137,8 +136,6 @@
 	border: none;
 }
 
-.sidebar-post-data {
-}
 .sidebar-post-title {
 	margin: 0 0 5px 0;
 	font-size: 18px;
@@ -181,8 +178,7 @@
 
 /* Sidebar post comments list 
 ============================== */
-.sidebar-comments-list {
-}
+
 .sidebar-comments-list ul {
 	margin: 0;
 }
@@ -204,8 +200,6 @@
 }
 
 /* Sidebar comment data */
-.sidebar-comment-data {
-}
 .sidebar-comment-author {
 	display: block;
 	font-size: 15px;
@@ -245,6 +239,7 @@
 	color: var(--tt-text-muted-color);
 	/* Max lines to show */
 	display: -webkit-box;
+	line-clamp: 2;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
@@ -262,10 +257,6 @@
 
 /* Sidebar tags 
 ================ */
-.sidebar-tags {
-}
-.sidebar-tags-list {
-}
 .sidebar-tags-list::after { /* Clear */
 	content: "";
 	display: table;
@@ -302,8 +293,6 @@
 
 /* Sidebar meta 
 ================ */
-.sidebar-meta {
-}
 .sidebar-meta ul > li > a {
 	position: relative;
 	margin: 3px 0;
@@ -320,14 +309,6 @@
 .sidebar-meta ul > li > a:hover {
 	background-size: 100% 96%;
 	color: var(--tt-text-color);
-}
-
-
-/* ------------------------------------------------------------- *
- * Blog list
-/* ------------------------------------------------------------- */
-
-#blog-list {
 }
 
 
@@ -364,7 +345,7 @@
 #blog-list.bli-image-cropped .bli-image img {
 	position: absolute;
 	top: 0;
-	left: 0;
+	inset-inline-start: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -505,14 +486,14 @@
 /* blog single inner */
 .blog-single-inner {
 	position: relative;
-	padding-left: 5%;
-	padding-right: 5%;
+	padding-inline-start: 5%;
+	padding-inline-end: 5%;
 }
 
 /* if page boxed layout enabled */
 body.tt-boxed .blog-single-inner.tt-wrap {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-inline-start: 15px;
+	padding-inline-end: 15px;
 }
 
 
@@ -523,7 +504,8 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 }
 
 /* blog single post content */
-.tt-blog-post-content {
+.tt-blog-post-content h4{
+	color: var(--tt-main-color);
 }
 
 .tt-blog-post-content p {
@@ -537,8 +519,8 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 
 /* blog single post image */
 .tt-blog-post-image {
-	margin-left: auto;
-	margin-right: auto;
+	margin-inline-start: auto;
+	margin-inline-end: auto;
 	margin-bottom: 30px;
 	overflow: hidden;
 	border-radius: 15px;
@@ -546,10 +528,6 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 .tt-bpi-link {
 	position: relative;
 	display: block;
-}
-.tt-blog-post-image img {
-}
-.tt-bpi-caption {
 }
 
 /* blog single tags */
@@ -574,6 +552,9 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 .tt-blog-post-tags > ul > li {
 	float: left;
 	margin: 3px;
+}
+[dir="rtl"] .tt-blog-post-tags > ul > li {
+	float: right;
 }
 .tt-blog-post-tags a {
 	position: relative;
@@ -601,7 +582,7 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 	align-items: center;
 }
 .tt-bps-text {
-	margin-right: 20px;
+	margin-inline-end: 20px;
 	font-size: 16px;
 	font-weight: bold;
 	font-weight: 700;
@@ -609,7 +590,7 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 }
 
 .tt-blog-post-share .tt-social-buttons {
-	margin-left: -10px;
+	margin-inline-start: -10px;
 }
 .tt-blog-post-share .tt-social-buttons > ul > li a {
 	font-size: 17px;
@@ -629,19 +610,26 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 	float: left;
 	width: 50%;
 }
+[dir="rtl"] .tt-bp-nav-col {
+	float: right;
+}
 .tt-bp-nav-left {
-	padding-right: 5%;
+	padding-inline-end: 5%;
 	border-right: 1px solid var(--tt-border-color);
 }
+[dir="rtl"] .tt-bp-nav-left {
+	border-left: 1px solid var(--tt-border-color);
+	border-right: 0;
+}
 .tt-bp-nav-left span {
-	margin-right: 10px;
+	margin-inline-end: 10px;
 }
 .tt-bp-nav-right {
-	padding-left: 5%;
-	text-align: right;
+	padding-inline-start: 5%;
+	text-align: end;
 }
 .tt-bp-nav-right span {
-	margin-left: 10px;
+	margin-inline-start: 10px;
 }
 
 .tt-bp-nav-text {
@@ -677,6 +665,9 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 @media (max-width: 680px) {
 	.tt-bp-nav-title {
 		display: none;
+	}
+	.bli-info{
+		margin-bottom: 30px;
 	}
 } 
 .tt-bp-nav-title a {
@@ -730,17 +721,17 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 .tt-comment-avatar {
 	position: relative;
 	display: inline-block;
-	float: left;
 	width: 50px;
 	height: 50px;
-	margin-right: 20px;
+	margin-inline-end: 20px;
 	overflow: hidden;
 	border-radius: 100px;
+	
 }
 .tt-comment-avatar img {
 	position: absolute;
 	top: 0;
-	left: 0;
+	inset-inline-start: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -763,7 +754,7 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 
 /* tt-Comments meta */
 .tt-comment-meta {
-	padding-right: 60px;
+	padding-inline-end: 60px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid rgb(131 131 131 / 26%);
 }
@@ -818,8 +809,8 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 .tt-comment-reply {
 	position: absolute;
 	top: 20px;
-	right: 20px;
-	text-align: right;
+	inset-inline-end: 20px;
+	text-align: end;
 	font-size: 14px;
 	font-style: italic;
 	z-index: 9;
@@ -827,7 +818,7 @@ body.tt-boxed .blog-single-inner.tt-wrap {
 @media (max-width: 768px) {
 	.tt-comment-reply {
 		top: 0;
-		right: 0;
+		inset-inline-end: 0;
 	}
 }
 .tt-comment-reply a {
